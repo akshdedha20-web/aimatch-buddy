@@ -32,29 +32,29 @@ export const UploadSection: React.FC<UploadSectionProps> = ({ onFileUpload }) =>
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-6">
-      <div className="text-center max-w-4xl mx-auto animate-slide-up">
+    <div className="min-h-screen flex flex-col items-center justify-start px-6 pt-20">
+      <div className="text-center max-w-5xl mx-auto animate-slide-up">
         {/* Animated title */}
-        <div className="relative mb-12">
-          <h1 className="text-6xl md:text-7xl font-bold gradient-text mb-6 animate-float">
+        <div className="relative mb-16">
+          <h1 className="text-5xl md:text-6xl font-bold gradient-text mb-8 animate-float">
             ShikshaSetu AI
           </h1>
-          <div className="absolute -top-4 right-10 animate-pulse-glow">
-            <Sparkles className="w-8 h-8 text-primary" />
+          <div className="absolute -top-4 right-8 animate-pulse-glow">
+            <Sparkles className="w-7 h-7 text-primary" />
           </div>
         </div>
 
-        <p className="text-xl md:text-2xl text-muted-foreground mb-16 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-lg md:text-xl text-gray-700 mb-20 max-w-4xl mx-auto leading-relaxed font-medium">
           Bridging Students with Opportunities through AI-Powered Internship Matching
         </p>
 
         {/* Upload area */}
-        <div className="mb-20">
+        <div className="mb-24">
           <div
-            className={`relative mx-auto max-w-lg p-12 border-2 border-dashed rounded-3xl transition-all duration-300 cursor-pointer ${
+            className={`relative mx-auto max-w-xl p-16 border-2 border-dashed rounded-3xl transition-all duration-300 cursor-pointer ${
               isDragOver 
-                ? 'border-primary bg-primary/5 scale-105 shadow-lg shadow-primary/20' 
-                : 'border-border bg-white/80 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 hover:bg-white/90'
+                ? 'border-primary bg-primary/8 scale-[1.02] shadow-xl shadow-primary/25' 
+                : 'border-primary/30 bg-white/90 hover:border-primary/60 hover:shadow-xl hover:shadow-primary/15 hover:bg-white hover:-translate-y-1'
             } backdrop-blur-sm`}
           onDrop={handleDrop}
           onDragOver={(e) => {
@@ -73,29 +73,29 @@ export const UploadSection: React.FC<UploadSectionProps> = ({ onFileUpload }) =>
           />
           
           <div className="text-center">
-            <div className="relative mb-6">
-              <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-r from-primary to-accent p-1 animate-pulse-glow">
+            <div className="relative mb-8">
+              <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-r from-primary to-accent p-1 animate-pulse-glow">
                 <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
                   {isDragOver ? (
-                    <FileText className="w-8 h-8 text-primary" />
+                    <FileText className="w-10 h-10 text-primary" />
                   ) : (
-                    <Upload className="w-8 h-8 text-primary" />
+                    <Upload className="w-10 h-10 text-primary" />
                   )}
                 </div>
               </div>
             </div>
             
-            <h3 className="text-2xl font-semibold mb-2">
+            <h3 className="text-3xl font-bold mb-4 text-gray-900">
               {isDragOver ? 'Drop your resume here!' : 'Upload Your Resume'}
             </h3>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-gray-600 mb-8 text-base leading-relaxed">
               Drag and drop your PDF resume or click to browse
             </p>
             
             <Button 
               variant="outline" 
               size="lg"
-              className="neumorphic hover:glow transition-all duration-300"
+              className="bg-white/90 hover:bg-white border-primary/40 hover:border-primary text-primary hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 px-8 py-3 text-base font-medium"
             >
               Choose File
             </Button>
@@ -104,16 +104,16 @@ export const UploadSection: React.FC<UploadSectionProps> = ({ onFileUpload }) =>
         </div>
 
         {/* Features preview */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto mb-32">
           {[
-            { icon: "🧠", title: "AI Analysis", desc: "NLP & NER processing" },
-            { icon: "⚖️", title: "Fair Allocation", desc: "Reservation rules applied" },
-            { icon: "🎯", title: "Smart Matching", desc: "Perfect internship fits" }
+            { icon: "🧠", title: "AI Analysis", desc: "Advanced NLP & NER processing for skill extraction" },
+            { icon: "⚖️", title: "Fair Allocation", desc: "Transparent reservation policies applied" },
+            { icon: "🎯", title: "Smart Matching", desc: "Intelligent internship-student pairing" }
           ].map((feature, index) => (
-            <div key={index} className="text-center p-8 rounded-2xl bg-white/70 backdrop-blur-sm border border-gray-100/50 hover:bg-white/90 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-300">
-              <div className="text-4xl mb-4">{feature.icon}</div>
-              <h4 className="font-semibold mb-3 text-gray-900">{feature.title}</h4>
-              <p className="text-sm text-gray-600 leading-relaxed">{feature.desc}</p>
+            <div key={index} className="text-center p-10 rounded-3xl bg-white/80 backdrop-blur-sm border border-gray-200/60 hover:bg-white hover:shadow-2xl hover:shadow-primary/15 hover:-translate-y-2 transition-all duration-300 h-full min-h-[280px] flex flex-col justify-center">
+              <div className="text-5xl mb-6 filter drop-shadow-sm">{feature.icon}</div>
+              <h4 className="text-xl font-bold mb-4 text-gray-900">{feature.title}</h4>
+              <p className="text-base text-gray-600 leading-relaxed">{feature.desc}</p>
             </div>
           ))}
         </div>
