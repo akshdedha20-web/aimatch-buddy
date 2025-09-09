@@ -32,10 +32,11 @@ export const UploadSection: React.FC<UploadSectionProps> = ({ onFileUpload }) =>
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-start px-6 pt-20">
+    <div className="min-h-screen flex flex-col items-center justify-start px-6 pt-24">
       <div className="text-center max-w-5xl mx-auto animate-slide-up">
+
         {/* Animated title */}
-        <div className="relative mb-16">
+        <div className="relative mb-20">
           <h1 className="text-5xl md:text-6xl font-bold gradient-text mb-8 animate-float">
             ShikshaSetu AI
           </h1>
@@ -44,12 +45,12 @@ export const UploadSection: React.FC<UploadSectionProps> = ({ onFileUpload }) =>
           </div>
         </div>
 
-        <p className="text-lg md:text-xl text-gray-700 mb-20 max-w-4xl mx-auto leading-relaxed font-medium">
+        <p className="text-lg md:text-xl text-gray-700 mb-24 max-w-4xl mx-auto leading-relaxed font-medium">
           Bridging Students with Opportunities through AI-Powered Internship Matching
         </p>
 
         {/* Upload area */}
-        <div className="mb-24">
+        <div className="mb-32">
           <div
             className={`relative mx-auto max-w-xl p-16 border-2 border-dashed rounded-3xl transition-all duration-300 cursor-pointer ${
               isDragOver 
@@ -104,7 +105,7 @@ export const UploadSection: React.FC<UploadSectionProps> = ({ onFileUpload }) =>
         </div>
 
         {/* Features preview */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto mb-32">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto mb-40">
           {[
             { icon: "🧠", title: "AI Analysis", desc: "Advanced NLP & NER processing for skill extraction" },
             { icon: "⚖️", title: "Fair Allocation", desc: "Transparent reservation policies applied" },
